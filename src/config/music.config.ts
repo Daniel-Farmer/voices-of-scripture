@@ -17,27 +17,27 @@ export type MusicMood = "default" | "divine" | "lament" | "praise" | "trial";
 /** Per-character default ambient track */
 export const characterMusic: Record<string, MusicTrack> = {
   moses: {
-    file: "exodus-journey.mp3",
+    file: "exodus-journey.wav",
     volume: 1.0,
   },
   "king-david": {
-    file: "shepherd-psalms.mp3",
+    file: "shepherd-psalms.wav",
     volume: 1.0,
   },
   "king-solomon": {
-    file: "temple-grandeur.mp3",
+    file: "temple-grandeur.wav",
     volume: 1.0,
   },
   jesus: {
-    file: "galilean-peace.mp3",
+    file: "galilean-peace.wav",
     volume: 1.0,
   },
   paul: {
-    file: "mediterranean-voyage.mp3",
+    file: "mediterranean-voyage.wav",
     volume: 1.0,
   },
   peter: {
-    file: "fishermans-shore.mp3",
+    file: "fishermans-shore.wav",
     volume: 1.0,
   },
 };
@@ -45,10 +45,10 @@ export const characterMusic: Record<string, MusicTrack> = {
 /** Mood-based overlay tracks that crossfade in during certain topics */
 export const moodTracks: Record<MusicMood, MusicTrack> = {
   default: { file: "", volume: 0 },
-  divine: { file: "mood-divine.mp3", volume: 0.5 },
-  lament: { file: "mood-lament.mp3", volume: 0.5 },
-  praise: { file: "mood-praise.mp3", volume: 0.5 },
-  trial: { file: "mood-trial.mp3", volume: 0.5 },
+  divine: { file: "moods/mood-divine.wav", volume: 0.5 },
+  lament: { file: "moods/mood-lament.wav", volume: 0.5 },
+  praise: { file: "moods/mood-praise.wav", volume: 0.5 },
+  trial: { file: "moods/mood-trial.wav", volume: 0.5 },
 };
 
 /** Keywords that trigger mood changes */
@@ -80,5 +80,5 @@ export const moodTriggers: MoodTrigger[] = [
 ];
 
 export function getCharacterMusic(characterId: string): MusicTrack {
-  return characterMusic[characterId] ?? { file: "galilean-peace.mp3", volume: 1.0 };
+  return characterMusic[characterId] ?? { file: "galilean-peace.wav", volume: 1.0 };
 }

@@ -7,6 +7,15 @@ import { VoiceControls } from "./VoiceControls";
 import { SignOutButton } from "@/components/SignOutButton";
 import type { Character } from "@/types";
 
+const characterAccents: Record<string, string> = {
+  moses: "#c9884c",
+  "king-david": "#4a80b0",
+  "king-solomon": "#7a4a8a",
+  jesus: "#c9a84c",
+  paul: "#a05040",
+  peter: "#4a8070",
+};
+
 interface EncounterLayoutProps {
   character: Character;
   isSpeaking: boolean;
@@ -24,6 +33,8 @@ export function EncounterLayout({
   onVoiceToggle,
   children,
 }: EncounterLayoutProps) {
+  const accent = characterAccents[character.id] ?? "#c9a84c";
+
   return (
     <div className="flex h-dvh flex-col bg-background">
       {/* Header */}
@@ -36,18 +47,45 @@ export function EncounterLayout({
           <span>Return</span>
         </Link>
 
+        <div className="flex flex-col items-center">
+          <span
+            className="font-[family-name:var(--font-cinzel)] text-sm font-semibold tracking-wide"
+            style={{ color: accent }}
+          >
+            {character.name}
+          </span>
+          <span className="font-[family-name:var(--font-inter)] text-[10px] text-muted-foreground">
+            {character.title}
+          </span>
+        </div>
+
         <div className="flex items-center gap-4">
           <VoiceControls
-          isEnabled={voiceEnabled}
-          onToggle={onVoiceToggle}
-          isSpeaking={isSpeaking}
-        />
+            isEnabled={voiceEnabled}
+            onToggle={onVoiceToggle}
+            isSpeaking={isSpeaking}
+          />
           <SignOutButton />
         </div>
       </header>
 
+      {/* Accent line */}
+      <div
+        className="h-[2px]"
+        style={{
+          background: `linear-gradient(90deg, transparent, ${accent}40, ${accent}80, ${accent}40, transparent)`,
+        }}
+      />
+
       {/* Avatar area */}
-      <div className="border-b border-border bg-gradient-to-b from-stone-dark to-background px-4 py-6">
+      <div className="relative border-b border-border bg-gradient-to-b from-stone-dark to-background px-4 py-6">
+        {/* Character accent tint */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background: `radial-gradient(ellipse at center top, ${accent}18, transparent 70%)`,
+          }}
+        />
         <CharacterAvatar
           character={character}
           isSpeaking={isAiSpeaking || isSpeaking}

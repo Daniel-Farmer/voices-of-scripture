@@ -63,8 +63,8 @@ export function useBackgroundMusic(enabled: boolean, characterId: string) {
           const response = await fetch(`/audio/music/${file}`);
           if (!response.ok) {
             // Fall back to galilean-peace if character-specific track is missing
-            if (file !== "galilean-peace.mp3") {
-              const fallback = await fetch("/audio/music/galilean-peace.mp3");
+            if (file !== "galilean-peace.wav") {
+              const fallback = await fetch("/audio/music/galilean-peace.wav");
               if (!fallback.ok) return;
               const ab = await fallback.arrayBuffer();
               if (cancelled) return;

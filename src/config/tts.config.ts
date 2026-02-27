@@ -20,25 +20,25 @@ export const characterVoices: Record<string, CharacterVoiceConfig> = {
     style: 0.5,
   },
   "king-solomon": {
-    voiceId: "onwK4e9ZLuTAKqWW03F9", // Daniel - wise, measured
+    voiceId: "nPczCjzI2devNBz1zQrb", // Brian - deep, wise
     stability: 1.0, // Robust - calm, authoritative
     similarityBoost: 0.85,
     style: 0.5,
   },
   jesus: {
-    voiceId: "EXAVITQu4vr4xnSDxMaL", // Sarah - gentle, compassionate
+    voiceId: "ZQe5CZNOzWyzPSCn5a3c", // James - calm, compassionate
     stability: 0.5,
     similarityBoost: 0.8,
     style: 0.5,
   },
   paul: {
-    voiceId: "TX3LPaxmHKxFdv7VOQHJ", // Liam - passionate, intellectual
+    voiceId: "pNInz6obpgDQGcFmaJgB", // Adam - deep, passionate
     stability: 0.0, // Creative - fiery intensity
     similarityBoost: 0.8,
     style: 0.5,
   },
   peter: {
-    voiceId: "pFZP5JQG7iQjIQuC4Bku", // Lily - earnest, rough
+    voiceId: "JBFqnCBsd6RMkjVDRZzb", // George - raspy, rough fisherman
     stability: 0.0,
     similarityBoost: 0.7,
     style: 0.5,
