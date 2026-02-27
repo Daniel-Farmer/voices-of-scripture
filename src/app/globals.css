@@ -1,26 +1,133 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #1a1510;
+  --foreground: #d4c5a0;
+  --card: #221c14;
+  --card-foreground: #d4c5a0;
+  --sacred-gold: #c9a84c;
+  --sacred-gold-dim: #8a7030;
+  --terracotta: #a0522d;
+  --parchment: #f5deb3;
+  --olive: #6b8e23;
+  --desert-blue: #2a4a6b;
+  --stone-dark: #1e1810;
+  --stone-medium: #2a2218;
+  --stone-light: #3a3228;
+  --ink: #c8b890;
+  --muted: #2a2418;
+  --muted-foreground: #8a7e6a;
+  --border: #3a3018;
+  --ring: #c9a84c;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-sacred-gold: var(--sacred-gold);
+  --color-sacred-gold-dim: var(--sacred-gold-dim);
+  --color-terracotta: var(--terracotta);
+  --color-parchment: var(--parchment);
+  --color-olive: var(--olive);
+  --color-desert-blue: var(--desert-blue);
+  --color-stone-dark: var(--stone-dark);
+  --color-stone-medium: var(--stone-medium);
+  --color-stone-light: var(--stone-light);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-crimson);
+  --font-heading: var(--font-cinzel);
+  --font-display: var(--font-cinzel-decorative);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-crimson), Georgia, "Times New Roman", serif;
+}
+
+/* Decorative divider */
+.scroll-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--sacred-gold), transparent);
+}
+
+/* Subtle parchment texture on messages */
+.character-message {
+  background: linear-gradient(
+    135deg,
+    rgba(34, 28, 20, 0.95),
+    rgba(42, 34, 24, 0.9)
+  );
+  border-left: 2px solid var(--sacred-gold-dim);
+}
+
+/* Glow keyframes for speaking avatar */
+@keyframes speakingGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(201, 168, 76, 0.2),
+                0 0 30px rgba(201, 168, 76, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(201, 168, 76, 0.4),
+                0 0 50px rgba(201, 168, 76, 0.2);
+  }
+}
+
+.speaking-glow {
+  animation: speakingGlow 2s ease-in-out infinite;
+}
+
+/* Torch flicker for decorative borders */
+@keyframes torchFlicker {
+  0%, 100% { border-color: rgba(201, 168, 76, 0.3); }
+  50% { border-color: rgba(201, 168, 76, 0.6); }
+}
+
+.torch-border {
+  animation: torchFlicker 3s ease-in-out infinite;
+}
+
+/* ── Portrait animations ── */
+
+/* Eyelid blink: skin-colored ellipse over the eye fades in briefly */
+.portrait-eyelid {
+  opacity: 0;
+  animation: eyelidBlink 4.5s ease-in-out infinite;
+}
+
+@keyframes eyelidBlink {
+  0%, 90%, 100% { opacity: 0; }
+  92%, 98% { opacity: 1; }
+}
+
+/* Subtle pupil shift: eyes glance left/right occasionally */
+.portrait-pupils {
+  animation: pupilShift 7s ease-in-out infinite;
+}
+
+@keyframes pupilShift {
+  0%, 30%, 100% { transform: translateX(0); }
+  35%, 45% { transform: translateX(1.5px); }
+  50%, 60% { transform: translateX(-1px); }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--stone-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--sacred-gold-dim);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sacred-gold);
 }
