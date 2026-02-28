@@ -1,5 +1,5 @@
 import { HeroSection } from "@/components/landing/HeroSection";
-import { BiblicalWorldMap } from "@/components/landing/BiblicalWorldMap";
+import { BiblicalWorldMapLoader } from "@/components/landing/BiblicalWorldMapLoader";
 import { SignOutButton } from "@/components/SignOutButton";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
         <SignOutButton />
       </div>
       <HeroSection />
-      <BiblicalWorldMap />
+      <BiblicalWorldMapLoader />
     </main>
   );
 }

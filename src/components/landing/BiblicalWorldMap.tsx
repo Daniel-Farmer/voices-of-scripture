@@ -4,7 +4,6 @@ import { useState, useCallback } from "react";
 import {
   ComposableMap,
   Geographies,
-  Geography,
   Marker,
   createCoordinates,
 } from "@vnedyalk0v/react19-simple-maps";
@@ -13,7 +12,7 @@ import { characters } from "@/lib/characters";
 import type { Character } from "@/types";
 import { CharacterPopup } from "./CharacterPopup";
 
-const GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
+const GEO_URL = "/geo/countries-110m.json";
 
 // Offsets for overlapping markers (in degrees)
 const markerOffsets: Record<string, [number, number]> = {
@@ -55,22 +54,12 @@ export function BiblicalWorldMap() {
           className="w-full h-auto"
         >
           <Geographies geography={GEO_URL}>
-            {({ geographies }) =>
-              geographies.map((geo) => (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
-                  fill="#2a2218"
-                  stroke="#3a3018"
-                  strokeWidth={0.5}
-                  style={{
-                    default: { outline: "none" },
-                    hover: { outline: "none" },
-                    pressed: { outline: "none" },
-                  }}
-                />
-              ))
-            }
+            {({ outline, borders }) => (
+              <g>
+                <path d={outline} fill="#2e2418" stroke="none" />
+                <path d={borders} fill="none" stroke="#4a3a28" strokeWidth={0.4} />
+              </g>
+            )}
           </Geographies>
 
           {/* Location labels */}
