@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import {
   ComposableMap,
   Geographies,
@@ -11,8 +11,6 @@ import { motion } from "motion/react";
 import { characters } from "@/lib/characters";
 import type { Character } from "@/types";
 import { CharacterPopup } from "./CharacterPopup";
-
-const GEO_URL = "/geo/countries-110m.json";
 
 // Offsets for overlapping markers (in degrees)
 const markerOffsets: Record<string, [number, number]> = {
@@ -36,6 +34,10 @@ const characterAccents: Record<string, string> = {
 export function BiblicalWorldMap() {
   const [selected, setSelected] = useState<Character | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const geoUrl = useMemo(
+    () => `${window.location.origin}/geo/countries-110m.json`,
+    []
+  );
 
   const handleClose = useCallback(() => setSelected(null), []);
 
@@ -53,7 +55,7 @@ export function BiblicalWorldMap() {
           height={500}
           className="w-full h-auto"
         >
-          <Geographies geography={GEO_URL}>
+          <Geographies geography={geoUrl}>
             {({ outline, borders }) => (
               <g>
                 <path d={outline} fill="#2e2418" stroke="none" />
