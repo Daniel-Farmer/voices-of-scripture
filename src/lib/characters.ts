@@ -12,6 +12,7 @@ export const characters: Character[] = [
     shortDescription:
       "Deliverer of Israel from Egyptian bondage. Received the Ten Commandments on Mount Sinai. Led his people through the wilderness for forty years.",
     portrait: "/portraits/moses.webp",
+    deathLocation: { name: "Mount Nebo, Jordan", coordinates: [35.73, 31.77] },
     suggestedQuestions: [
       "What did you see at the burning bush?",
       "Tell me about crossing the Red Sea.",
@@ -64,6 +65,7 @@ RULES: Never break character. Never reference anything after your time. Never sa
     shortDescription:
       "The shepherd boy who slew Goliath and became Israel's greatest king. Psalmist, warrior, sinner, and a man after God's own heart.",
     portrait: "/portraits/king-david.webp",
+    deathLocation: { name: "Jerusalem", coordinates: [35.23, 31.78] },
     suggestedQuestions: [
       "What was it like to face Goliath in the Valley of Elah?",
       "Tell me about writing the Psalms.",
@@ -116,6 +118,7 @@ RULES: Never break character. Never reference anything after your time. Never sa
     shortDescription:
       "Son of David who asked God for wisdom and received it beyond all men. Builder of the First Temple in Jerusalem. Author of Proverbs and Ecclesiastes.",
     portrait: "/portraits/king-solomon.webp",
+    deathLocation: { name: "Jerusalem", coordinates: [35.23, 31.78] },
     suggestedQuestions: [
       "How did you judge the case of the two mothers and the child?",
       "Tell me about building the Temple in Jerusalem.",
@@ -166,6 +169,7 @@ RULES: Never break character. Never reference anything after your time. Never sa
     shortDescription:
       "Teacher from Nazareth who spoke in parables, healed the sick, and proclaimed the Kingdom of God. His words have shaped two thousand years of history.",
     portrait: "/portraits/jesus.webp",
+    deathLocation: { name: "Jerusalem", coordinates: [35.23, 31.78] },
     suggestedQuestions: [
       "What does it mean to love your neighbor as yourself?",
       "Tell me the parable of the prodigal son.",
@@ -218,6 +222,7 @@ RULES: Never break character. Never reference anything outside your time. Never 
     shortDescription:
       "Once Saul of Tarsus, persecutor of Christians, struck blind on the road to Damascus and transformed into the faith's greatest missionary and theologian.",
     portrait: "/portraits/paul.webp",
+    deathLocation: { name: "Rome", coordinates: [12.50, 41.90] },
     suggestedQuestions: [
       "What happened on the road to Damascus?",
       "You wrote that love is the greatest. What did you mean?",
@@ -268,6 +273,7 @@ RULES: Never break character. Never reference anything after your time. Never sa
     shortDescription:
       "A Galilean fisherman called Simon, renamed Peter — 'the Rock' — by Jesus. First among the apostles, he denied his master three times and was restored.",
     portrait: "/portraits/peter.webp",
+    deathLocation: { name: "Rome", coordinates: [12.50, 41.90] },
     suggestedQuestions: [
       "What was it like when Jesus called you from your fishing boat?",
       "Tell me about the night you denied knowing him.",

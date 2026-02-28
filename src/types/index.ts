@@ -10,4 +10,8 @@ export interface Character {
   portrait: string;
   suggestedQuestions: string[];
   systemPrompt: string;
+  deathLocation?: {
+    name: string;
+    coordinates: [number, number]; // [longitude, latitude]
+  };
 }

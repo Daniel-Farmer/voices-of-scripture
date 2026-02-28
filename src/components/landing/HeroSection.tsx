@@ -53,7 +53,7 @@ export function HeroSection() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
       >
-        Choose who to speak with
+        Explore the biblical world
       </motion.p>
     </section>
   );

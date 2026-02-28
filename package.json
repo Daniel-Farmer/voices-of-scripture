@@ -13,6 +13,7 @@
     "@openrouter/ai-sdk-provider": "^2.2.3",
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.98.0",
+    "@vnedyalk0v/react19-simple-maps": "^2.0.2",
     "ai": "^6.0.103",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

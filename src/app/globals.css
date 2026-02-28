@@ -117,6 +117,18 @@ body {
   50%, 60% { transform: translateX(-1px); }
 }
 
+/* ── Map pin animations ── */
+
+@keyframes mapPinPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.4); }
+}
+
+.map-pin-pulse {
+  animation: mapPinPulse 2.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 6px;
